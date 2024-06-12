@@ -70,7 +70,14 @@ function App() {
                           setstate(5);
                         }, 1000);
                         const ans = await gen(response.data.transcript) ; 
-                       
+                        console.log(ans) ; 
+                        set_trans(ans) ; 
+                        setTimeout(() => {
+                          setstate(6);
+                        }, 1000);
+                        setTimeout(() => {
+                          setstate(7);
+                        }, 1000);
                   
                       })
                       .catch(error => {
@@ -80,8 +87,7 @@ function App() {
                         setTimeout(() => {
                           setstate(7);
                         }, 1000);
-                        console.log(ans) ; 
-                        set_trans(ans) ; 
+                        
                         set_trans(response.data.transcript)
                         console.error('Error uploading video:', error);
                         // Log the entire error object for debugging
