@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
 
-
+    let prek = ""
     if (now_context.vsrc) {
     setload(true) ; 
     async function run(){
@@ -60,6 +60,7 @@ function App() {
                     axios.post('https://beta-2-1.onrender.com/upload', formData)
                       .then(async (response) => {
                         console.log('Video uploaded successfully:', response.data);
+                        prek = response 
                         setTimeout(() => {
                           setstate(3);
                         }, 2000); // 2000 milliseconds = 2 seconds
@@ -88,7 +89,7 @@ function App() {
                           setstate(7);
                         }, 1000);
                         
-                        set_trans(response.data.transcript)
+                        set_trans(prek.data.transcript)
                         console.error('Error uploading video:', error);
                         // Log the entire error object for debugging
                         console.log('Full error object:', error);
