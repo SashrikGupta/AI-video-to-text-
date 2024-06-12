@@ -1,0 +1,41 @@
+#root{
+  display : flex ; 
+  justify-content: center ;
+  align-items: center ;
+  margin : 2vh  2vw ; 
+  text-align: center;
+}
+body {
+  height : 100vh ; 
+  width : 98vw ; 
+  background-image: url(https://png.pngtree.com/background/20230525/original/pngtree-the-background-is-a-pink-and-blue-pastel-scene-picture-image_2728262.jpg);
+  background-size: cover;
+  display : flex ; 
+  justify-content: center;
+  align-items: center;
+}
+*{
+  padding : 0 ; 
+  margin : 0 ; 
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 70px;
+  height : 30vh ; 
+  aspect-ratio: .75;
+  --c: no-repeat linear-gradient(45deg , violet , pink);
+  background: 
+    var(--c) 0%   50%,
+    var(--c) 50%  50%,
+    var(--c) 100% 50%;
+  animation: l7 1s infinite linear alternate;
+}
+@keyframes l7 {
+  0%  {background-size: 20% 50% ,20% 50% ,20% 50% }
+  20% {background-size: 20% 20% ,20% 50% ,20% 50% }
+  40% {background-size: 20% 100%,20% 20% ,20% 50% }
+  60% {background-size: 20% 50% ,20% 100%,20% 20% }
+  80% {background-size: 20% 50% ,20% 50% ,20% 100%}
+  100%{background-size: 20% 50% ,20% 50% ,20% 50% }
+}
